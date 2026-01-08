@@ -18,14 +18,15 @@ async def test_post():
         condition_id="test123",
         question="Will Bitcoin reach $100k by end of 2025?",
         slug="bitcoin-100k-2025",
+        event_slug="bitcoin-100k-2025",
         yes_price=0.65,
         no_price=0.35,
         volume_24h=125000,
         liquidity=50000,
         end_date="2025-12-31",
         category="Crypto",
-        yes_token_id="",
-        no_token_id="",
+        yes_token_id="12345",
+        no_token_id="12346",
     )
 
     fake_edge = Edge(
@@ -51,7 +52,7 @@ risk: low
 low risk: 1
 med risk: 2
 
-polymarket.com/event/bitcoin-100k-2025"""
+polymarket.com/event/bitcoin-100k-2025?tid=12345"""
 
     print("Initializing Twitter client...")
     twitter = TwitterClient()

@@ -81,7 +81,7 @@ def format_signal_tweet(edge: Edge) -> str:
         "",
         edge.description,
         "",
-        f"polymarket.com/event/{edge.market.slug}",
+        edge.market.get_url(),
     ])
 
     return "\n".join(lines)
@@ -140,7 +140,7 @@ def format_grouped_tweet(edges: list[Edge]) -> str:
 
         lines.append(f"{i}. {question}")
         lines.append(f"   {price_str} | {sig_info}")
-        lines.append(f"   polymarket.com/event/{edge.market.slug}")
+        lines.append(f"   {edge.market.get_url()}")
         lines.append("")
 
     return "\n".join(lines)

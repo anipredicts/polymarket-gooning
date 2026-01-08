@@ -14,6 +14,7 @@ class Market:
     condition_id: str
     question: str
     slug: str
+    event_slug: str  # Parent event slug for URL construction
     yes_price: float
     no_price: float
     volume_24h: float
@@ -22,6 +23,11 @@ class Market:
     category: str
     yes_token_id: str
     no_token_id: str
+
+    def get_url(self) -> str:
+        """Get the correct Polymarket URL for this market"""
+        slug = self.event_slug or self.slug
+        return f"polymarket.com/event/{slug}?tid={self.yes_token_id}"
 
 
 @dataclass
@@ -123,10 +129,17 @@ class PolymarketClient:
                     except (ValueError, TypeError):
                         pass
 
+                # Get event slug from events array (for grouped markets)
+                events = m.get("events", [])
+                event_slug = ""
+                if events and len(events) > 0:
+                    event_slug = events[0].get("slug", "")
+
                 markets.append(Market(
                     condition_id=m.get("conditionId", ""),
                     question=m.get("question", ""),
                     slug=m.get("slug", ""),
+                    event_slug=event_slug,
                     yes_price=yes_price,
                     no_price=no_price,
                     volume_24h=float(m.get("volume24hr", 0) or 0),
@@ -190,11 +203,14 @@ class PolymarketClient:
 
         m = data[0]
         clob_token_ids = m.get("clobTokenIds", [])
+        events = m.get("events", [])
+        event_slug = events[0].get("slug", "") if events else ""
 
         return Market(
             condition_id=m.get("conditionId", ""),
             question=m.get("question", ""),
             slug=m.get("slug", ""),
+            event_slug=event_slug,
             yes_price=float(m.get("outcomePrices", "[0.5,0.5]").strip("[]").split(",")[0]),
             no_price=float(m.get("outcomePrices", "[0.5,0.5]").strip("[]").split(",")[1]),
             volume_24h=float(m.get("volume24hr", 0) or 0),

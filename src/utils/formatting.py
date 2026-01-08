@@ -50,11 +50,6 @@ def format_signal_type(signal_type: str) -> str:
     return signal_type.replace("_", " ")
 
 
-def build_polymarket_url(slug: str) -> str:
-    """Build Polymarket event URL"""
-    return f"polymarket.com/event/{slug}"
-
-
 def format_digest_tweet(
     signal_count: int,
     top_market: str,
@@ -63,7 +58,7 @@ def format_digest_tweet(
     signal_type: str,
     risk_level: str,
     risk_breakdown: dict,
-    slug: str,
+    market_url: str,
 ) -> str:
     """Format an hourly digest tweet"""
     lines = [
@@ -93,7 +88,7 @@ def format_digest_tweet(
 
     lines.extend([
         "",
-        build_polymarket_url(slug),
+        market_url,
     ])
 
     return "\n".join(lines)

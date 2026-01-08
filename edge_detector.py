@@ -51,7 +51,7 @@ class Edge:
             f"",
             f"{self.description}",
             f"",
-            f"polymarket.com/event/{self.market.slug}",
+            self.market.get_url(),
         ]
         return "\n".join(lines)
 
