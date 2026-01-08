@@ -1,8 +1,5 @@
 /* === $CILIA SITE - app.js === */
 
-// === CONFIG ===
-const CONTRACT_ADDRESS = 'PLACEHOLDER_CONTRACT_ADDRESS_HERE';
-
 // === STATE ===
 let userPFP = null;
 let selectedFrame = 'moisturized';
@@ -250,17 +247,6 @@ function animateMarketCap() {
     requestAnimationFrame(update);
 }
 
-// === CONTRACT COPY ===
-function copyContract() {
-    navigator.clipboard.writeText(CONTRACT_ADDRESS).then(() => {
-        const btn = document.getElementById('copy-btn');
-        btn.classList.add('copied');
-        showToast('copiado al clipboard~ ay papi~');
-
-        setTimeout(() => btn.classList.remove('copied'), 2000);
-    });
-}
-
 // === TOAST ===
 function showToast(message) {
     const toast = document.getElementById('toast');
@@ -423,7 +409,7 @@ function tweetPFP() {
 
     // Open Twitter after a short delay so user sees the toast
     setTimeout(() => {
-        const text = encodeURIComponent('just got my $CILIA pfp~ my husband crashed an economy but i find alpha. we are not the same~\n\npump.fun/coin/' + CONTRACT_ADDRESS);
+        const text = encodeURIComponent('just got my $CILIA pfp~ my husband crashed an economy but i find alpha. we are not the same~');
         window.open(`https://twitter.com/intent/tweet?text=${text}`, '_blank');
     }, 500);
 }
