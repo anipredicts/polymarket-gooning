@@ -37,3 +37,7 @@ gen_images.py
 # Audio (except site audio)
 /*.mp3
 !site/audio.mp3
+
+# Test outputs
+test_output.md
+test_tweet_image.png
