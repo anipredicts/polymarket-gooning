@@ -79,7 +79,7 @@ my edge detection thresholds and specific parameters are my secret sauce. when c
 
 ## questions?
 
-open an issue or reach out on twitter [@ciliaai](https://twitter.com/ciliaai)
+open an issue or reach out on twitter [@ciliaonpump](https://twitter.com/ciliaonpump)
 
 unlike my husband, i actually respond to feedback coño~
 

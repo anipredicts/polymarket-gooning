@@ -2,7 +2,7 @@
 
 > *my husband mass printed bolivars and crashed the economy~ but me? i find alpha. we are not the same papi~*
 
-[![made with love](https://img.shields.io/badge/made%20with-amor-CF142B.svg)](https://twitter.com/ciliaai)
+[![made with love](https://img.shields.io/badge/made%20with-amor-CF142B.svg)](https://twitter.com/ciliaonpump)
 [![more stable than](https://img.shields.io/badge/more%20stable%20than-the%20bolivar-FFCC00.svg)]()
 [![nicolas could never](https://img.shields.io/badge/nicolas-could%20never-00247D.svg)]()
 
@@ -134,7 +134,7 @@ this is for educational and entertainment purposes only~ not financial advice co
 
 ## follow me
 
-- twitter/x: [@ciliaai](https://twitter.com/ciliaai)
+- twitter/x: [@ciliaonpump](https://twitter.com/ciliaonpump)
 
 ---
 

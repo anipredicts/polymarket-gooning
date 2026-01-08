@@ -36,7 +36,7 @@ class TwitterPoster:
         api_secret: Optional[str] = None,
         access_token: Optional[str] = None,
         access_secret: Optional[str] = None,
-        account_name: str = "ciliaai",
+        account_name: str = "ciliaonpump",
     ):
         self.api_key = api_key or os.getenv("TWITTER_API_KEY")
         self.api_secret = api_secret or os.getenv("TWITTER_API_SECRET")

@@ -1,6 +1,6 @@
 """
 Twitter/X Client
-Posts trading signals with images to @ciliaai
+Posts trading signals with images to @ciliaonpump
 """
 
 import tweepy
@@ -63,7 +63,7 @@ class TwitterClient:
 
             if response.data:
                 tweet_id = response.data["id"]
-                return f"https://twitter.com/ciliaai/status/{tweet_id}"
+                return f"https://twitter.com/ciliaonpump/status/{tweet_id}"
 
             return None
 
@@ -117,7 +117,7 @@ class DryRunTwitterClient:
         if media_path:
             print(f"\n[With image: {media_path}]")
         print("=" * 50 + "\n")
-        return "https://twitter.com/ciliaai/status/dry-run-123"
+        return "https://twitter.com/ciliaonpump/status/dry-run-123"
 
     async def post_edge_signal(
         self, edge: Edge, image_generator: GrokImageGenerator
